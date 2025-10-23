@@ -1,0 +1,21 @@
+{
+  "name": "hemnt-webportfolio",
+  "version": "1.0.0",
+  "description": "A 3D interactive personal portfolio built using Spline and web technologies.",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo \"Open index.html in your browser to view the portfolio.\""
+  },
+  "keywords": [
+    "portfolio",
+    "3d",
+    "spline",
+    "interactive",
+    "frontend",
+    "web",
+    "design"
+  ],
+  "author": "Hemant Pendem <pendemhemant@gmail.com>",
+  "license": "MIT",
+  "type": "module"
+}
