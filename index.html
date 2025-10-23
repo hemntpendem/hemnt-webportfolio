@@ -79,7 +79,8 @@
                <div class="box3"><img src="images/sneakxlist.png" alt='sneakx search page'/><span>List Page</span></div>
                <div class="box4"><img src="images/sneakxcart.png" alt='sneakx search page'/><span>Cart Page</span></div>
             </div>
-
+                 
+            <div id="imgmodal" class="imgmodal"> <span class="imgclose">&times;</span> <img class="imgmodal-content" id="imgmodalImg"> <div id="imgcaption"></div> </div>
 
             <div class="text-block2">
                   <h1 ><span>SNEAKX</span><br>FRONTEND<br>E-COM WEB APP</h1>
@@ -93,7 +94,7 @@
                   Managed global state with react use context and persisted cart data using local storage.<br>
                   Implemented secure user authentication using Google Sign-In through Firebase<br>
                   Deployed project on Vercel  for live demo and maintained code on GitHub.</p>
-                  <button class="vercel">SNEAKX.VERCEL.APP</button>
+                  <a href="https://sneakx.vercel.app" target="_blank" rel="noopener noreferrer" class="vercel">VISIT SNEAKX.COM</a>
     
             </div> 
     </div>
@@ -116,7 +117,10 @@ Built a responsive movie exploration app with search, genre navigation, movie de
 Enabled sharing of movie details across devices and integrated APIs for real-time cast, ratings, and release info.<br>
 Implemented secure user authentication with NextAuth, allowing users to log in via credentials.<br>
 Deployed on Vercel  for live demo and maintained source code on GitHub.</p>
-            <button class="vercel">MXPO.VERCEL.APP</button>
+           <a href="https://mxpo.vercel.app" target="_blank" rel="noopener noreferrer" class="vercel">
+  VISIT MXPO.COM
+</a>
+
          
         </div>
 
@@ -224,26 +228,34 @@ Deployed on Vercel  for live demo and maintained source code on GitHub.</p>
     });
   });
 </script>
+<script>
+  // Resume modal
+const resumeModal = document.getElementById("resumeModal");
+const resumeOpenBtn = document.getElementById("openResume");
+const resumeCloseBtn = resumeModal.querySelector(".close");
 
- <!-- Modal JS -->
-  <script>
-    const modal = document.getElementById("resumeModal");
-    const openBtn = document.getElementById("openResume");
-    const closeBtn = modal.querySelector(".close");
+resumeOpenBtn.addEventListener("click", () => { resumeModal.style.display = "flex"; });
+resumeCloseBtn.addEventListener("click", () => { resumeModal.style.display = "none"; });
+window.addEventListener("click", e => { if (e.target === resumeModal) resumeModal.style.display = "none"; });
 
-    openBtn.addEventListener("click", () => {
-      modal.style.display = "flex";
-    });
+// Image modal
+const imgModal = document.getElementById("imgmodal");
+const imgModalImg = document.getElementById("imgmodalImg");
+const imgCaption = document.getElementById("imgcaption");
+const imgCloseBtn = document.querySelector(".imgclose");
 
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
+document.querySelectorAll(".sneakx-grid img,.mxpo-grid img").forEach(img => {
+  img.addEventListener("click", () => {
+    imgModal.style.display = "block";
+    imgModalImg.src = img.src;
+    imgCaption.textContent = img.alt;
+  });
+});
 
-    window.addEventListener("click", e => {
-      if (e.target === modal) modal.style.display = "none";
-    });
-  </script>
+imgCloseBtn.addEventListener("click", () => { imgModal.style.display = "none"; });
+imgModal.addEventListener("click", (e) => { if (e.target === imgModal) imgModal.style.display = "none"; });
 
+</script>
   
      
 </body>
